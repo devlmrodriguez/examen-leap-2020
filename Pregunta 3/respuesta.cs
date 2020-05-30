@@ -38,8 +38,11 @@ class Pregunta3
         //Para una semicircunferencia inferior, usar 180 y 360
         float startAngle = 0f;
         float endAngle = 180f;
-        //Distancia en ángulos entre cada punto, se resta 1 a la cantidad original para siempre tomar en cuenta el ángulo inicial
-        float angleStep = (endAngle - startAngle) / (points - 1);
+        
+        float angleStep = 0f;
+        if(points > 1)
+            //Distancia en ángulos entre cada punto, se resta 1 a la cantidad original para siempre tomar en cuenta el ángulo inicial
+            angleStep = (endAngle - startAngle) / (points - 1);
 
         //Para cada punto, calcular su ángulo respectivo y junto con el radio obtener sus coordenadas cartesianas, asumiendo el origen en (0,0)
         for (int i = 0; i < points; i++)
